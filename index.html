@@ -100,6 +100,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script>
 
+      let myStorage = window.localStorage
+      let toDo = []
       // add day, month date to header
       $('#currentDay').text(moment().format('dddd, MMMM Do'))
 
@@ -107,23 +109,24 @@
       $('.saveBtn').on('click', function(event){
         event.preventDefault();
         var currentHour = event.target.parentElement.parentElement.id
-        var calenderInput = event.target.parentNode.parentElement.children[1].firstChild.value
+        var calendarInput = event.target.parentNode.parentElement.children[1].firstChild.value
         
         // local.storage
         if (event.target.matches('button')) {
-          console.log('add to calender ...', currentHour, calenderInput)
-          localStorage.getItem(currentHour, calenderInput)
+          console.log('add to calendar ...', currentHour, calenderInput)
+          toDo.push([currentHour, calendarInput])
+          console.log(toDo)
+          //localStorage.setItem(toDo, JSON.stringify(toDo))
+        } else {
+          console.log('oops ... something went wrong')
         }
-
-
-        
 
 
         
       })
 
       // apply class to timeblock based on hour
-      function colourCalender(){
+      function colourCalendar(){
         var timeBlock = document.querySelectorAll('.time-block')
         var currentTime = moment().format('k')
         
@@ -156,7 +159,8 @@
       }
       
 
-      colourCalender();
+      colourCalendar();
+      myStorage.getItem(myStorage)
 
     </script>
   </body>
