@@ -104,6 +104,23 @@
       $('#currentDay').text(moment().format('dddd, MMMM Do'))
 
       // add buttons
+      $('.saveBtn').on('click', function(event){
+        event.preventDefault();
+        var currentHour = event.target.parentElement.parentElement.id
+        var calenderInput = event.target.parentNode.parentElement.children[1].firstChild.value
+        
+        // local.storage
+        if (event.target.matches('button')) {
+          console.log('add to calender ...', currentHour, calenderInput)
+          localStorage.getItem(currentHour, calenderInput)
+        }
+
+
+        
+
+
+        
+      })
 
       // apply class to timeblock based on hour
       function colourCalender(){
@@ -134,12 +151,10 @@
             timeBlock[i].classList.add('future')
           } else{
             console.log('something is not working ...')
-          }
-          
+          } 
         }
-        
       }
-      // local.storage
+      
 
       colourCalender();
 
