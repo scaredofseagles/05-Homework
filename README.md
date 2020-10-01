@@ -24,7 +24,7 @@ As a calendar, I used Moment.js to keep track of the current time and to illustr
 ## Usage
 The following image is an example of the web application's appearance and functionality: 
 
-![Image]()
+![Image](Assets/workday-schedule-screenshot.png)
 
 ## What I Did
 
