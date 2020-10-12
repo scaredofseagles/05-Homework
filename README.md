@@ -81,7 +81,7 @@ if (event.target.matches('button')) {
 
 ## URL
 
-See the web application [here](https://scaredofseagles.github.io/05-Homework/)
+See the web application [here](https://scaredofseagles.github.io/Workday-Schedule/)
 
 ## License
 
